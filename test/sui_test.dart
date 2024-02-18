@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 import 'package:pinenacl/ed25519.dart';
 import 'package:convert/convert.dart' show hex;
 
-import 'package:ethereum_util/src/sui.dart' as sui;
+import 'package:ethereum_util/src/coins/sui.dart' as sui;
 
 void main() {
   const String TEST_MNEMONIC =
@@ -31,7 +31,7 @@ void main() {
       final signedMessage =
           sui.suiSignatureFromSeedReturnRaw(messageList, privateKey);
       final signMessageHash = sui.suiSignatureFromSeed(messageList, privateKey);
-      print(signedMessage.signature);
+      // print(signedMessage.signature);
       expect(hex.encode(signedMessage.signature), signMessageHash);
       final result = sui.suiVerifySignedMessage(
           Uint8List.fromList(signingKey.publicKey), signedMessage);

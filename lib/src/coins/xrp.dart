@@ -3,10 +3,9 @@ import 'package:bip39/bip39.dart' as bip39;
 import 'package:bip32/bip32.dart' as bip32;
 import 'package:convert/convert.dart' show hex;
 
-/// Generates Sui seed by mnemonic
 const XRP_PATH = "m/44'/144'/0'/0/0";
 
-class Xrp {
+class XrpCoin {
   static mnemonicToAddress(String mnemonic) {
     final wallet = mnemonicToWallet(mnemonic);
     final publicKey = wallet.getPublic();
@@ -50,12 +49,3 @@ class Xrp {
     return tx.toBlob(forSigning: false);
   }
 }
-// String camelToSnake(String input) {
-//   String result = input.replaceAllMapped(RegExp(r'([A-Z])'), (Match match) {
-//     return '_' + match.group(1)!.toLowerCase();
-//   });
-//   if (result.startsWith('_')) {
-//     return result.replaceFirst('_', '');
-//   }
-//   return result;
-// }

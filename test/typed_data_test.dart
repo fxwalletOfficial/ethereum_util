@@ -87,7 +87,7 @@ void main() {
           '0x99e71a99cb2270b8cac5254f9e99b6210c6c10224a1579cf389ef88b20a1abe9129ff05af364204442bdb53ab6f18a99ab48acc9326fa689f228040429e3ca661b';
       try {
         final result = TypedDataUtil.recoverPublicKey(data, sig, version);
-        print(result);
+        // print(result);
       } catch (error) {
         // print(error);
       }
